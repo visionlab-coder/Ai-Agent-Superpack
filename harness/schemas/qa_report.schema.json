@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "QAReport",
+  "type": "object",
+  "required": ["version","topic","score","total","pass","categories"],
+  "properties": {
+    "version":    {"type":"string"},
+    "topic":      {"type":"string"},
+    "timestamp":  {"type":"string"},
+    "score":      {"type":"integer","minimum":0,"maximum":26},
+    "total":      {"type":"integer","const":26},
+    "pass":       {"type":"boolean"},
+    "categories": {"type":"array"},
+    "failed_items":{"type":"array"}
+  }
+}

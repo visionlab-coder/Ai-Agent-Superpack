@@ -1,15 +1,13 @@
 ---
-allowed-tools: Bash(git:*), Bash(uv:*), Bash(npm:*), Bash(pnpm:*), Bash(npx:*), Bash(go:*), Bash(cargo:*), Bash(make:*), Bash(python:*), Read, Write, Edit, Glob, Grep, Task
+allowed-tools: Bash(git:*), Bash(npm:*), Bash(pnpm:*), Bash(npx:*), Bash(go:*), Bash(cargo:*), Bash(make:*), Bash(python:*), Read, Write, Edit, Glob, Grep, Task
 description: 계획부터 PR까지 원버튼 자동 실행. 중간에 멈추지 않습니다.
 argument-hint: [작업 설명] [--mode feature|bugfix|refactor]
 ---
 
-// turbo-all
-
-# /auto - 원스톱 자동 워크플로우 (v6) - Ultra Superpack 적용
+# /auto - 원스톱 자동 워크플로우 (v6)
 
 개별 커맨드를 하나씩 호출하는 대신, 전체 파이프라인을 한 번에 자동 실행합니다.
-초고속 패키지 관리자 `uv`를 기본으로 사용하며, 사용자의 명시적 중단이 없는 한 끝까지 자동 진행합니다.
+CRITICAL 보안 이슈에서만 중단하며, 그 외에는 끝까지 진행합니다.
 
 ---
 
@@ -82,7 +80,7 @@ refactor-clean -> code-review -> handoff-verify -> commit-push-pr -> sync-docs
 
 1. Git 레포 확인 (`git rev-parse --is-inside-work-tree`)
 2. 프로젝트 타입 감지 (package.json / go.mod / Cargo.toml / pyproject.toml)
-3. 패키지 매니저 감지 (uv (초고속 기본) / pnpm-lock.yaml / yarn.lock / bun.lockb / npm)
+3. 패키지 매니저 감지 (pnpm-lock.yaml / yarn.lock / bun.lockb / npm)
 
 Git 레포가 아니면 안내 후 중단.
 

@@ -1,0 +1,31 @@
+{
+  "name": "video-harness-cowork",
+  "version": "3.0.0",
+  "description": "VIDEO HARNESS PRO — Claude Cowork 멀티에이전트 영상 자동화 파이프라인",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "validate": "node src/validators/validate-cli.mjs",
+    "pipeline": "node src/pipeline/pipeline-cli.mjs",
+    "pipeline:validate": "node src/validators/validate-cli.mjs",
+    "pipeline:copy": "node src/pipeline/copy-to-public.mjs",
+    "pipeline:manifest": "node src/pipeline/manifest.mjs",
+    "remotion:preview": "npx remotion preview",
+    "remotion:render": "npx remotion render NewsVideo --output=output/render/final.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.443",
+    "@remotion/player": "^4.0.443",
+    "@remotion/renderer": "^4.0.443",
+    "ajv": "^8.18.0",
+    "ajv-formats": "^3.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.443"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.11"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SceneArray",
+  "type": "array",
+  "minItems": 6,
+  "maxItems": 8,
+  "items": {
+    "type": "object",
+    "required": ["id","type","title","duration","narration","lower_third","transition","unsplash_query","accent","keywords"],
+    "properties": {
+      "id":            {"type":"string","pattern":"^(EP[0-9]{2}-)?SC[0-9]{2}$"},
+      "type":          {"enum":["opening","headline","data","analysis","expert","field","closing"]},
+      "title":         {"type":"string","maxLength":40},
+      "duration":      {"type":"number","minimum":5,"maximum":60},
+      "narration":     {"type":"string","minLength":40,"maxLength":300},
+      "lower_third":   {"type":"string","maxLength":32},
+      "visual_desc":   {"type":"string"},
+      "transition":    {"enum":["fade","wipe-left","wipe-right","zoom-in","zoom-out","slide-up","slide-down","flash"]},
+      "unsplash_query":{"type":"string","maxLength":50},
+      "accent":        {"type":"string","pattern":"^#[0-9A-Fa-f]{6}$"},
+      "bg":            {"type":"string","pattern":"^#[0-9A-Fa-f]{6}$"},
+      "keywords":      {"type":"array","items":{"type":"string"},"maxItems":5},
+      "keyframes":     {"type":"array","items":{"type":"object"}}
+    }
+  }
+}
